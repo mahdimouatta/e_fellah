@@ -10,7 +10,7 @@ class ProductCard extends StatefulWidget {
         "helloLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit erat, bibendum vitae aliquet id, faucibus at mi. Fusce imperdiet velit id feugiat ultricies. In id scelerisque eros, id tempus dui. Duis accumsan luctus orci, et scelerisque eros tristique id. Sed ut nibh vel magna cursus iaculis et id dolor. Pellentesque turpis arcu, dictum aliquet viverra a, molestie nec magna. Duis augue lacus, sollicitudin sit amet congue ac, faucibus quis est. Fusce et ante non ante mattis efficitur eu nec nisi. Ut quam felis, pulvinar consectetur vehicula a, tempor lacinia est. Morbi tincidunt mi at tortor placerat scelerisque."
         "helloLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit erat, bibendum vitae aliquet id, faucibus at mi. Fusce imperdiet velit id feugiat ultricies. In id scelerisque eros, id tempus dui. Duis accumsan luctus orci, et scelerisque eros tristique id. Sed ut nibh vel magna cursus iaculis et id dolor. Pellentesque turpis arcu, dictum aliquet viverra a, molestie nec magna. Duis augue lacus, sollicitudin sit amet congue ac, faucibus quis est. Fusce et ante non ante mattis efficitur eu nec nisi. Ut quam felis, pulvinar consectetur vehicula a, tempor lacinia est. Morbi tincidunt mi at tortor placerat scelerisque.",
     imageLink: "",
-    nom: "nom",
+    nom: "Product 1",
     prix: 150,
     review: 5,
     stars: 2,
@@ -26,7 +26,7 @@ class _ProductCardState extends State<ProductCard> {
     description:
         "helloLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit erat, bibendum vitae aliquet id, faucibus at mi. Fusce imperdiet velit id feugiat ultricies. In id scelerisque eros, id tempus dui. Duis accumsan luctus orci, et scelerisque eros tristique id. Sed ut nibh vel magna cursus iaculis et id dolor. Pellentesque turpis arcu, dictum aliquet viverra a, molestie nec magna. Duis augue lacus, sollicitudin sit amet congue ac, faucibus quis est. Fusce et ante non ante mattis efficitur eu nec nisi. Ut quam felis, pulvinar consectetur vehicula a, tempor lacinia est. Morbi tincidunt mi at tortor placerat scelerisque.\nhelloLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit erat, bibendum vitae aliquet id, faucibus at mi. Fusce imperdiet velit id feugiat ultricies. In id scelerisque eros, id tempus dui. Duis accumsan luctus orci, et scelerisque eros tristique id. Sed ut nibh vel magna cursus iaculis et id dolor. Pellentesque turpis arcu, dictum aliquet viverra a, molestie nec magna. Duis augue lacus, sollicitudin sit amet congue ac, faucibus quis est. Fusce et ante non ante mattis efficitur eu nec nisi. Ut quam felis, pulvinar consectetur vehicula a, tempor lacinia est. Morbi tincidunt mi at tortor placerat scelerisque.",
     imageLink: "assets/image.jpg",
-    nom: "nom",
+    nom: "Produit 1",
     prix: 150,
     review: 5,
     stars: 2,
@@ -54,7 +54,7 @@ class _ProductCardState extends State<ProductCard> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
-                    "Product\nName",
+                    product.nom,
                     style: Theme.of(context).textTheme.headline,
                   ),
                 ),
@@ -73,7 +73,7 @@ class _ProductCardState extends State<ProductCard> {
                           ),
                           borderRadius: BorderRadius.circular(20.0)),
                       child: Text(
-                        "review : ../10",
+                        "review: " + product.review.toString() + "/10",
                         style: Theme.of(context).textTheme.subtitle,
                       ),
                     ),
@@ -135,7 +135,10 @@ class _ProductCardState extends State<ProductCard> {
                                       size: 16.0,
                                       color: Colors.grey,
                                     )),
-                                    TextSpan(text: "8 km to centrum")
+                                    TextSpan(
+                                        text: "utilisé par : " +
+                                            product.users.toString() +
+                                            " Personne")
                                   ]),
                                   style: TextStyle(
                                       color: Colors.grey, fontSize: 12.0),
@@ -146,7 +149,7 @@ class _ProductCardState extends State<ProductCard> {
                           Column(
                             children: <Widget>[
                               Text(
-                                "200 DH",
+                                product.prix.toString() + " DH",
                                 style: Theme.of(context).textTheme.body2,
                               ),
                               Text(
@@ -167,7 +170,7 @@ class _ProductCardState extends State<ProductCard> {
                           color: Theme.of(context).canvasColor,
                           textColor: Colors.white,
                           child: Text(
-                            "Book Now",
+                            "Commander",
                             style: Theme.of(context).textTheme.headline,
                           ),
                           padding: const EdgeInsets.symmetric(
